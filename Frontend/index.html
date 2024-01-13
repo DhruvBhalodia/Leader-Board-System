@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Leaderboard System</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <!-- Font Awesome CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <!-- Custom styles -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <div class="sidebar">
+    <ul>
+      <li class="active" data-leaderboard="codechef"><img src="./Images/codechefLogo.jpg" alt=""><a href="#">Codechef</a></li>
+      <li data-leaderboard="leetcode"><img src="./Images/leetcode.png" alt=""><a href="#">Leetcode</a></li>
+      <li data-leaderboard="codeforces"><img src="./Images/codeforces.jpeg" alt=""><a href="#">Codeforces</a></li>
+    </ul>
+  </div>
+  <div class="main">
+
+    <div class="leaderboard" id="codechefLeaderboard">
+      <h2>Codechef Leaderboard</h2>
+      <div class="search-container">
+        <input type="text" id="searchInput" oninput="searchChanged()" placeholder="Search by name..." style="width: 300px;">
+      </div>
+      <div class="leaderboard-container">
+        <div class="leaderboard-table">
+
+          <table id="scoreboard">
+          </table>
+          <div id="pagination">
+            <button onclick="prevPage()">
+              < </button>
+                <span id="pageNumber" style="color: white;"></span>
+                <button onclick="nextPage()"> > </button>
+          </div>
+        </div>
+        <div class="filter-container">
+          <div class="filter-section">
+            <h3>Filter by year</h3>
+            <label class="checkbox">
+              <input type="checkbox" id="firstYearCheckbox" onchange="filterChanged()">
+              <span class="custom-checkbox"></span> 1st Year
+            </label>
+            <label class="checkbox">
+              <input type="checkbox" id="secondYearCheckbox" onchange="filterChanged()">
+              <span class="custom-checkbox"></span> 2nd Year
+            </label>
+            <label class="checkbox">
+              <input type="checkbox" id="thirdYearCheckbox" onchange="filterChanged()">
+              <span class="custom-checkbox"></span> 3rd Year
+            </label>
+            <label class="checkbox">
+              <input type="checkbox" id="fourthYearCheckbox" onchange="filterChanged()">
+              <span class="custom-checkbox"></span> 4th Year
+            </label>
+          </div>
+          <div class="filter-container">
+            <div class="filter-section">
+              <h3>Filter by Rating</h3>
+              <select id="ratingFilter" onchange="filterChanged()">
+                <option value="all">All</option>
+                <option value="lessThan1400">&lt; 1400</option>
+                <option value="1400to1600">≥ 1400 and &lt; 1600</option>
+                <option value="1600to1800">≥ 1600 and &lt; 1800</option>
+                <option value="1800to2000">≥ 1800 and &lt; 2000</option>
+                <option value="2000to2200">≥ 2000 and &lt; 2200</option>
+                <option value="2200to2500">≥ 2200 and &lt; 2500</option>
+                <option value="greaterThan2500">≥ 2500</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="leaderboard" id="leetcodeLeaderboard">
+      <h2>Leetcode Leaderboard</h2>
+    </div>
+
+    <div class="leaderboard" id="codeforcesLeaderboard">
+      <h2>Codeforces Leaderboard</h2>
+    </div>
+    <!-- Bootstrap JavaScript -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Custom JavaScript -->
+    <script src="script.js"></script>
+</body>
+
+</html>
